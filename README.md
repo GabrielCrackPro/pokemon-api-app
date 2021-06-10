@@ -7,14 +7,15 @@ An aplication using pokemon API
 - [x] Find Pokemon API - https://pokeapi.co
 - [x] Make requests handler
 - [x] Show pokemon stats
-  - [ ] Pokedex Number
+  - [x] Pokedex Number
   - [x] Image
   - [x] Name
-  - [ ] Type
-  - [ ] HP
-  - [ ] Attack / Defense points
-  - [ ] Moves
+  - [x] Type
+  - [x] HP
+  - [x] Attack / Defense points
+  - [ ] Moves - FIX
 - [ ] Show other data
   - [ ] Games
   - [ ] Movies
   - [ ] Cards
+- [x] Deploy <a href="http://www.pokeFinderApp.surge.sh" target="blank">here</a>
