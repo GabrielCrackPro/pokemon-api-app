@@ -13,7 +13,7 @@ An aplication using pokemon API
   - [x] Type
   - [x] HP
   - [x] Attack / Defense points
-  - [ ] Moves - FIX
+  - [x] Moves
 - [ ] Show other data
   - [ ] Games
   - [ ] Movies
