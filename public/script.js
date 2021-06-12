@@ -42,18 +42,23 @@ const showPokemon = async (query) => {
     <p id="sp"class="fs-3"><span class="fst-italic fs-4"><i class="fas fa-weight-hanging"></i></span> ${pokemonData.weight}</p>
     </div>
     <div class="container border border-3 border-dark w-50 mt-2 moves">
-    <p class="fs-3 fw-bold text-uppercase border-bottom border-dark border-3">Base Moves</p>
+    <p class="fs-3 fw-bold text-uppercase border-bottom border-dark border-3">Moves<br><span class="fs-6 text-lowercase">(only the first ten moves are shown) <a href="https://pokeapi.co/api/v2/moves" target="blank" class="link-dark">View All</a></span></p>
     </div>
     </div>
     `
     const moves = []
     const movesContainer = document.querySelector('.moves')
-    for (let i = 0; i <= pokemon.moves.length; i++) {
+    for (let i = 0; i <= 10; i++) {
         if (pokemon.moves[i]) {
-            moves.push(pokemon.moves[i].move.name)
+            moves.push({
+                name: pokemon.moves[i].move.name,
+                link: pokemon.moves[i].move.url
+            })
             const individualMove = document.createElement('div')
-            individualMove.classList.add('text-center', 'fs-6', 'text-capitalize', 'border-bottom', 'border-3', 'border-dark')
-            individualMove.textContent = moves[i]
+            individualMove.classList.add('text-center', 'fs-5', 'text-capitalize', 'border-bottom', 'border-3', 'border-dark')
+            individualMove.textContent = JSON.stringify(moves[i].name).slice(1, moves[i].name.length + 1)
+            individualMove.innerHTML += `<br><a href="${moves[i].link}" target="blank" class="link-dark"><i class="fas fa-info-circle fs-3"></i></a>`
+            individualMove.classList.add('p-2')
             movesContainer.classList.add('d-flex', 'flex-column')
             movesContainer.appendChild(individualMove)
         }
