@@ -19,7 +19,7 @@ const showPokemon = async (query) => {
         xp: pokemon.base_experience,
         attack: pokemon.stats[1].base_stat,
         defense: pokemon.stats[2].base_stat,
-        weight: pokemon.weight,
+        weight: pokemon.weight / 10, //Convert hg to kg
         special: {
             attack: pokemon.stats[3].base_stat,
             defense: pokemon.stats[4].base_stat
@@ -29,8 +29,7 @@ const showPokemon = async (query) => {
         img: pokemon.sprites.front_default
     }
     pokemonContainer.innerHTML = `
-    <p id="name" class="text-uppercase fw-bold"><span class="fw-normal fst-italic fs-4">#${pokemonData.id}</span> ${pokemonData.name}</p>
-    <p id="type" class="text-capitalize fw-bold">${pokemonData.type}</p>
+    <p id="name" class="text-uppercase fw-bold"><span class="fw-normal fst-italic fs-4"><img src="img/types_icons/${pokemonData.type}.svg" height="40" width="40" alt="type" title="${pokemonData.type}"></img>#${pokemonData.id}</span> ${pokemonData.name}</p>
     <img src="${pokemonData.img}" height="100" width="100" alt="front_sprite" class="front-img"></img>
     <div class="container border border-3 border-dark w-50 text-center mt-2">
     <p class="fs-3 fw-bold text-uppercase border-bottom border-dark border-3 text-start">Base Stats</p>
@@ -39,7 +38,7 @@ const showPokemon = async (query) => {
     <p id="att-def"class="fs-3"><span class="fst-italic fs-4"><i class="fas fa-fist-raised"></i>/<i class="fas fa-shield-alt"></i></span> ${pokemonData.attack}/${pokemonData.defense}</p>
     <p id="sp-att-def"class="fs-3"><span class="fst-italic fs-4"> SP <i class="fas fa-fist-raised"></i>/ SP <i class="fas fa-shield-alt"></i></span> ${pokemonData.special.attack}/${pokemonData.special.defense}</p>
     <p id="sp"class="fs-3"><span class="fst-italic fs-4"><i class="fas fa-shoe-prints"></i></span> ${pokemonData.speed}</p>
-    <p id="sp"class="fs-3"><span class="fst-italic fs-4"><i class="fas fa-weight-hanging"></i></span> ${pokemonData.weight}</p>
+    <p id="sp"class="fs-3"><span class="fst-italic fs-4"><i class="fas fa-weight-hanging"></i></span> ${pokemonData.weight} kg</p>
     </div>
     <div class="container border border-3 border-dark w-50 mt-2 moves">
     <p class="fs-3 fw-bold text-uppercase border-bottom border-dark border-3">Moves<br><span class="fs-6 text-lowercase">(only the first ten moves are shown) <a href="https://pokeapi.co/api/v2/moves" target="blank" class="link-dark">View All</a></span></p>
