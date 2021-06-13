@@ -10,7 +10,7 @@ An aplication using pokemon API
   - [x] Pokedex Number
   - [x] Image
   - [x] Name
-  - [x] Type
+  - [x] Type - Icon
   - [x] HP
   - [x] Attack / Defense points
   - [x] Moves
@@ -18,4 +18,5 @@ An aplication using pokemon API
   - [ ] Games
   - [ ] Movies
   - [ ] Cards
+- [ ] Add item search
 - [x] Deploy <a href="http://www.pokeFinderApp.surge.sh" target="blank">here</a>
