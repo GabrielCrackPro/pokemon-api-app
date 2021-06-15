@@ -12,6 +12,7 @@ const getPokemon = async (query) => {
 }
 const showPokemon = async (query) => {
     let pokemon = await getPokemon(query)
+    document.title = `PokeFinder | ${query}`
     const pokemonData = {
         id: pokemon.id,
         name: pokemon.name,
